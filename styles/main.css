@@ -277,7 +277,7 @@ footer p {
 	font-variant: small-caps;
 	text-align: center;
 }
-/* Hide Slicknav in full-screen view */
+/* Hide SlickNav in Full Screen Mode */
 .slicknav_menu {
 	display: none;
 }
@@ -315,16 +315,15 @@ footer p {
 	.nav_menu {
 		display: none;
 	}
+	#mobilemenu {
+		display: block;
+	  }
 	.slicknav_menu {
 		display: block;
 		width: 100%;
 		background-color: black !important;
 	}
-	/* 
-	.slicknav_menu ul li a { 
-		color: red !important;
-		font-size: 120% !important;
-	} */
+
 	
 	/*  Increase body and main width and decrease font size  */
 	body, main {

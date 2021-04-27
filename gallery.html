@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- shiv which should be a shim -->
+    <!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<![endif]-->
+
+	<!-- tab title -->
+	<title>Gallery | One Direction</title>
+
+	<!-- favicon link -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles/slicknav.css">
+	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+  <!-- slicknav -->
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>   <!-- Link to jQuery Content Delivery Network - Necessary for SlickNav to work correctly -->
+  <script src="js/jquery.slicknav.min.js"></script>                     <!-- Link to the slicknav file inside the js folder - Necessary for SlickNav to work correctly -->
+
+<!-- slicknav javascript - this javascript code will use the UL inside the nav_menu tag to build the same menu in slickNav format -->
+<script type="text/javascript">
+    $(document).ready(function(){
+    $('.nav_menu').slicknav({prependTo:"#mobilemenu"});
+    });
+  </script> 
+
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+.clearfix::after {
+    clear: both;
+    content: "";
+	display: table;
+}
+  html {
+    background: #1a1a1a;
+	background-image: url("gallery/images/background2.jpeg");
+  background-attachment: fixed;
+  }
+  body {
+    font-family:'Indie Flower', cursive;
+	font-size: 120%;
+	width: 100%;
+	margin: 0 auto;
+	color: white;
+	background-color: rgba(194, 213, 219, 0.774);
+  }
+  header {
+    width: 100%;
+	  margin: 0;
+	  background-image: linear-gradient(to right, green, white, orange);
+    border-bottom: 3px ridge #f0f0f5;
+  }
+  header h1 {
+	font-size: 300%;
+	font-variant: small-caps;
+	padding: .5em 0 0;
+	text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+  list-style-type: none;
+  }
+header img {
+	float: left;
+	margin: 1em 1em 0 2em;
+	max-width: 200px;
+  width: 100%;
+}
+ /* Navigation Menu*/
+.nav_menu {
+	border-bottom: 3px ridge #f0f0f5;
+}
+.nav_menu ul {
+	display: flex;
+	list-style-type: none;
+	padding: 0; 
+}
+.nav_menu ul li {
+	width: 25%;
+	background-color:red;
+	margin: 0;
+	text-align: center; 
+	transition: all .75s;
+}
+.nav_menu ul li a {
+	display: inline-block;
+	width: 100%;
+	padding: 10px 0;
+	text-decoration: none;
+	font-size: 120%;
+	color: yellow;
+	font-weight: bold;
+	font-variant: small-caps;
+	transition: all .75s;
+}
+.nav_menu ul li a:hover {
+	background-color: green;
+	color:blue;
+}
+/* Scroll-To-Top Button */
+#myBtn {
+	display: none; /* Hidden by default */
+	width: 88%;
+	z-index: 99; /* Make sure it does not overlap */
+	border: 1px solid purple;
+	outline: none; /* Remove outline */
+	background-color: orange; /* Set a background color */
+	color: white; /* Text color */
+	font-weight: bold;
+	cursor: pointer; /* Add a mouse pointer on hover */
+	padding: .5em .5em;
+	margin: 0 1em 3px 0;
+	text-align: left;
+	transition: all .5s;
+	font-family: 'Indie Flower', cursive;
+	font-size: 100%;
+	border-radius: 5px;
+}
+#myBtn:hover {
+	background-color: red;
+	color: yellow;
+	margin: 0 0 3px 1em;
+	border: 1px solid white;
+}
+#cornerBtn {
+	display: none; /* Hidden by default */
+	position: fixed;
+	left: 5px;
+	bottom: 150px;
+	z-index: 99; /* Make sure it does not overlap */
+	border: 1px solid black;
+	outline: none; /* Remove outline */
+	font-weight: bold;
+	cursor: pointer; /* Add a mouse pointer on hover */
+	padding: .5em .5em;
+	margin: 0 1em 3px 0;
+	font-family: 'Indie Flower', cursive;
+	font-size: 100%;
+	border-radius: 5px;
+	background-color:green;
+	color: blue;
+	transition: all .5s;
+}
+#cornerBtn:hover {
+	background-color: red;
+	color: yellow;
+	border: 1px solid red;
+}
+  footer {
+    background-color: steelblue;
+  margin-top: 10%;
+  clear: both;
+  padding: auto;
+
+}
+  footer p {
+  font-size: 75%;
+  text-align: center;
+  color: white;
+  padding: 25px;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+#gallerypage {
+	background-color: rgba(0, 0, 0, 0);
+	
+}
+#gallery {
+	width: 100%;
+	margin: 0 auto;
+}
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 4px;
+}
+/* Create four equal columns that sits next to each other */
+.column {
+	flex: 25%;
+	max-width: 25%;
+	padding: 0 4px;
+}
+
+.column img {
+	margin-top: 8px;
+	vertical-align: middle;
+	width: 100%;
+	border: 3px ridge silver;
+	border-radius: 10px;
+}
+
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+      padding: 0 4px;
+    }
+  }
+
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+      padding: 0 4px;
+    }
+  }
+  /* Footer */
+footer {
+	clear: both;
+	width: 100%;
+	margin: 0;
+	padding: 3em 0;
+	background-color: white;
+    border-top: 3px ridge #f0f0f5;
+    background-image: linear-gradient(to right, green, white, orange);
+}
+footer p {
+	font-size: 90%;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+	font-variant: small-caps;
+	text-align: center;
+}
+/* Hide SlickNav in Full Screen Mode */
+.slicknav_menu {
+	display: none;
+}
+/* Media Quaries */
+@media only screen and (max-width: 1100px) {
+	
+	/* remove the sidebar from the homepage and make the rest of the page full width */
+	.bookmarks {
+		display: none;
+	}
+	#homepage, #discography {
+		float: none;
+		width: 99%;
+		margin: 0 auto;
+	}
+
+}
+@media only screen and (max-width: 850px) {
+	
+	/* image gallery - drop down from 4 columns to 3 columns */
+	.column {
+		flex: 33.3%;
+		max-width: 33.3%;
+	}
+	.pimgLeft img, .pimgRight img {
+		float: none;
+		display: block;
+		margin: 0 auto;
+	}
+	
+}
+@media only screen and (max-width: 767px) {
+	
+	/*  Hide the navigation menu and display the slicknav compact menu  */
+	.nav_menu {
+		display: none;
+	}
+	#mobilemenu {
+		display: block;
+	  }
+	.slicknav_menu {
+		display: block;
+		width: 100%;
+		background-color: black !important;
+	}
+
+	
+	/*  Increase body and main width and decrease font size  */
+	body, main {
+		width: 100%;
+		font-size: 85%;
+	}
+	
+	/*  Removed float from header image, display as block and auto margins to center in display  */
+	header img {
+		float: none;
+		display: block;
+		margin: 0 auto;
+		padding: 1em 0;
+		max-width: 60%;
+	}
+	h1 {
+		font-size: 120%;
+		text-align: center;
+	}
+	
+	/*  Remove float from section and increase width to 100%  */
+	section {
+		float: none;
+		width: 100%;
+		margin: 1em 0 2em;
+	}
+	
+	/*  Hide the bookmarks sidebar  */
+	.bookmarks {
+		display: none;
+	}
+	
+	/*  Increase width of article and div to 100%, remove side margins and side padding and remove border radius  */
+	article, div {
+		width: 100%;
+		margin: 0 0 2em;
+		padding: 2em 0;
+		border-radius: 0;
+	}
+	
+	/*  Remove border and box shadow from videos and resize to 100% width  */
+	.videowrapper {
+		border: 0;
+		box-shadow: none;
+		width: 100%;
+	}
+	
+	/*  reset the "twocol" class to one column  */
+	.twocol {
+		font-size: 80%;
+		column-count: 1;
+	}
+	
+	/*  Gallery page - reset to 2 columns  */
+	.column {
+		flex: 50%;
+		max-width: 50%;
+		padding: 0;
+	}
+	.row {
+		padding: 0;
+	}
+	
+	/*  homepage image, remove border, border radius and box shadow and side margins  */
+	#homepage img {
+		display: block;
+		max-width: 1080px;
+		width: 100%;
+		margin: 5px auto;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+	}
+	#homepage div {
+		margin: 0 auto;
+		padding-bottom: 2em;
+		border: none;
+		border-radius: 0;
+	}
+	
+	.pimgLeft img, .pimgRight img {
+		border-radius: 0;
+		box-shadow: none;
+	}
+	.ptxtLeft, .ptxtRight {
+		width: 100%;
+		margin: 0;
+	}
+	.ptxtLeft p, .ptxtRight p {
+		padding: 0 1em;		
+	}
+	#cornerBtn {
+		left: 0px;
+		bottom: 0px;
+	}	
+}
+	@media (max-width: 600px) {
+		.column {
+			flex: 100%;
+			max-width: 100%;
+		}
+		.column img {
+			border: 0;
+			border-radius: 0;
+		}
+	}
+
+      </style>
+    </head>
+<body id="gallerypage">
+
+  <header class="clearfix">
+    <a href="home.html"><img src="gallery/images/background2.jpeg"></a>
+    <h1><a href="gallery.html">Gallery</a></h1>
+  </header>
+
+      <nav id="mobilemenu"></nav>
+	<nav class="nav_menu">
+    	<ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        	<li><a href="videos.html">Videos</a></li>
+        	<li><a href="home.html">Mailing List</a></li>
+    	</ul>
+	</nav>
+    <!-- Photo Grid -->
+    <section id="gallery">
+      <div class="row"> 
+        <div class="column">
+          <img src="gallery/images/1.jpg">
+          <img src="gallery/images/2.jpeg">
+          <img src="gallery/images/3.jpeg">
+          <img src="gallery/images/4.jpg">
+          <img src="gallery/images/5.jpg">
+          <img src="gallery/images/6.jpg">
+          <img src="gallery/images/7.jpg">
+          <img src="gallery/images/35.jpeg">
+          <img src="gallery/images/30.jpg">
+          <img src="gallery/images/24.jpeg">
+        </div>
+        <div class="column">
+          <img src="gallery/images/8.jpg">
+          <img src="gallery/images/9.jpg">
+          <img src="gallery/images/10.jpg">
+          <img src="gallery/images/11.jpg">
+          <img src="gallery/images/12.jpg">
+          <img src="gallery/images/13.jpeg">
+          <img src="gallery/images/14.jpeg">
+          <img src="gallery/images/15.jpeg">
+          <img src="gallery/images/31.jpg">
+          <img src="gallery/images/20.jpg">
+        </div>  
+        <div class="column">
+          <img src="gallery/images/16.jpeg">
+          <img src="gallery/images/17.jpeg">
+          <img src="gallery/images/18.jpg">
+          <img src="gallery/images/19.jpeg">
+          <img src="gallery/images/21.jpg">
+          <img src="gallery/images/22.jpeg">
+          <img src="gallery/images/23.jpeg">
+          <img src="gallery/images/34.jpeg">
+          <img src="gallery/images/36.jpeg">
+        </div>
+        <div class="column">
+          <img src="gallery/images/25.jpeg">
+          <img src="gallery/images/26.jpeg">
+          <img src="gallery/images/27.jpeg">
+          <img src="gallery/images/28.jpeg">
+          <img src="gallery/images/29.jpg"> 
+          <img src="gallery/images/32.jpg">
+        
+        
+       
+      </div>
+    </div>
+  </section>
+    <div><button onclick="topFunction()" id="cornerBtn" title="Return To Top">Return To Top</button></div>
+    <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+  
+    function scrollFunction() {
+      if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      document.getElementById("cornerBtn").style.display = "block";
+      } else {
+      document.getElementById("cornerBtn").style.display = "none";
+      }
+    }
+  
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+  
+  
+    <script>
+      window.onload = function() {
+        var d = new Date();
+        document.getElementById("copyright").innerHTML = d.getFullYear();
+      }
+    </script>
+  
+    <footer>
+      <p>&copy; <span id="copyright"></span> Jessica Fine Fan Page</p>
+    </footer>
+  
+  </body>
+  </html>
